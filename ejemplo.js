@@ -9,10 +9,8 @@ console.log("Edad como string:", edad.toString());
 //Uso de template literals
 console.log(`Hola, ${nombre}. Tienes ${edad} años.`);
 
-
 // Definición y uso de funciones
 function saludar(persona) {
-    return "Hola, " + persona + "!";
+  return "Hola, " + persona + "!";
 }
 console.log(saludar(nombre));
-
