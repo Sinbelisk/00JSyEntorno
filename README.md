@@ -115,10 +115,16 @@
    Solo se usa JS puro para aprender, para aplicaciones profesionales o proyectos personales
    es mejor usar un framework como React o Svelte.
 
-8. Cómo se define una función en JS  
-   function hello() {
-   // Contenido.
-   }
+8. Cómo se define una función en JS
+
+```javascript
+function hello() {
+  // Contenido.
+}
+
+// Lambda o "arrow function"
+const hello = () => console.log("Hello, World!");
+```
 
 9. Sobre el código demuestra la diferencia entre let y const  
    let es para declarar una variable cuyo valor puede cambiar, const como dice la
