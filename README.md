@@ -7,10 +7,10 @@
 3. Haz clic en la pestaña "Consola".
 4. Prueba los siguientes comandos uno por uno y observa el resultado:
    ```js
-   2 + 2
-   console.log("¡Hola, mundo!")
-   let nombre = "Anita"
-   nombre
+   2 + 2;
+   console.log("¡Hola, mundo!");
+   let nombre = "Anita";
+   nombre;
    ```
 
 ## Parte 3: Tu primer archivo HTML + JavaScript
@@ -21,17 +21,17 @@
    ```html
    <!DOCTYPE html>
    <html lang="es">
-   <head>
-     <meta charset="UTF-8">
-     <title>Hola JS</title>
-   </head>
-   <body>
-     <script>
-       console.log("¡Hola, mundo!");
-       let nombre = "Ana";
-       console.log("Bienvenida, " + nombre);
-     </script>
-   </body>
+     <head>
+       <meta charset="UTF-8" />
+       <title>Hola JS</title>
+     </head>
+     <body>
+       <script>
+         console.log("¡Hola, mundo!");
+         let nombre = "Ana";
+         console.log("Bienvenida, " + nombre);
+       </script>
+     </body>
    </html>
    ```
 4. Desde VSCode abre el archivo `hola.html` en tu navegador.
@@ -42,86 +42,87 @@
 - Cambia el valor de la variable `nombre` por el tuyo y recarga la página.
 - Añade una línea que sume dos números y muestre el resultado con `console.log`.
 - Añade otra variable con tu apellido y muestra un saludo completo.
-- Modifica el saludo para que incluya el apellido en mayúsculas. Busca en la consola cómo convertir una cadena a mayúsculas. Para ello usa un literal de cadena (con tu nombre) seguido del operador punto (`.`) 
+- Modifica el saludo para que incluya el apellido en mayúsculas. Busca en la consola cómo convertir una cadena a mayúsculas. Para ello usa un literal de cadena (con tu nombre) seguido del operador punto (`.`)
 - Modifica el archivo para que el saludo se muestre en la página web en lugar de la consola. Usa `document.body.innerHTML` para esto:
-   ```js
-   document.body.innerHTML = "<h1>¡Hola, " + nombre + "!</h1>";
-   ```
+  ```js
+  document.body.innerHTML = "<h1>¡Hola, " + nombre + "!</h1>";
+  ```
 - Publica tu proyecto en el repositorio de GitHub y usa GitHub Pages para alojarlo. Sigue [esta guía](https://docs.github.com/es/pages/getting-started-with-github-pages/creating-a-github-pages-site) para hacerlo.
 
-
 ## parte 5: formulario HTML + JavaScript
+
 1. Crea un archivo llamado `formulario.html` en la misma carpeta `00JSyEntorno`.
 2. Crea un archivo llamado `formulario.js` en la misma carpeta `00JSyEntorno`.
 3. Escribe el siguiente código en `formulario.html`:
 4. ```html
    <!DOCTYPE html>
    <html lang="es">
-   <head>
-     <meta charset="UTF-8">
-     <title>Formulario de Saludo</title>
-   </head>
-   <body>
-     <h1>Formulario de Saludo</h1>
-     <form id="formulario">
-       <label for="nombreInput">Nombre:</label>
-       <input type="text" id="nombreInput" required>
-       <button type="submit">Saludar</button>
-     </form>
-     <p id="salida"></p>
-     
-     <script src="formulario.js"></script>
-   </body>
+     <head>
+       <meta charset="UTF-8" />
+       <title>Formulario de Saludo</title>
+     </head>
+     <body>
+       <h1>Formulario de Saludo</h1>
+       <form id="formulario">
+         <label for="nombreInput">Nombre:</label>
+         <input type="text" id="nombreInput" required />
+         <button type="submit">Saludar</button>
+       </form>
+       <p id="salida"></p>
+
+       <script src="formulario.js"></script>
+     </body>
    </html>
    ```
 5. Escribe el siguiente código en `formulario.js`:
    ```js
-   document.addEventListener('DOMContentLoaded', function() {
-     document.getElementById('formulario').addEventListener('submit', function(event) {
-       event.preventDefault();
-       const nombre = document.getElementById('nombreInput').value;
-       document.getElementById('salida').textContent = '¡Hola, ' + nombre + '!';
-     });
+   document.addEventListener("DOMContentLoaded", function () {
+     document
+       .getElementById("formulario")
+       .addEventListener("submit", function (event) {
+         event.preventDefault();
+         const nombre = document.getElementById("nombreInput").value;
+         document.getElementById("salida").textContent =
+           "¡Hola, " + nombre + "!";
+       });
    });
    ```
 6. Desde VSCode abre `formulario.html` en tu navegador y prueba el formulario.
 
-   
 ## Parte 6: Preguntas de reflexión
 
 1. ¿Qué hace `console.log`?  
-Imprime por la salida estandar de la consola del navegador una cadena.
-Útil para depurar.
+   Imprime por la salida estandar de la consola del navegador una cadena.
+   Útil para depurar.
 
 2. ¿Qué ocurre si cambias el valor de la variable desde la consola? ¿Se puede?  
-Se cambia el valor (a no ser que sea una constante). Dura solo para la sesión.
+   Se cambia el valor (a no ser que sea una constante). Dura solo para la sesión.
 
 3. ¿Para qué sirve la consola del navegador en este contexto?  
-Probar y depurar código, inspeccionar variables, pruebas en vivo de JS.
+   Probar y depurar código, inspeccionar variables, pruebas en vivo de JS.
 
 4. Para qué sirve el archivo HTML en este contexto?  
-Estructurar y definir la página.
+   Estructurar y definir la página.
 
 5. ¿Por qué es una buena práctica separar el código JavaScript del HTML?  
-Por organización y reutilización de código. El HTML solo debería contener
-etiquetas html y mantener la lógica por separado.
+   Por organización y reutilización de código. El HTML solo debería contener
+   etiquetas html y mantener la lógica por separado.
 
 6. Por qué se llama Vanilla JavaScript?  
-Porque es JS sin librerias ni frameworks, solo libreria estandar.
-
+   Porque es JS sin librerias ni frameworks, solo libreria estandar.
 
 7. Cuándo se usa JavaScript puro y cuándo se usan frameworks o librerías como REACT?  
-Solo se usa JS puro para aprender, para aplicaciones profesionales o proyectos personales
-es mejor usar un framework como React o Svelte.
+   Solo se usa JS puro para aprender, para aplicaciones profesionales o proyectos personales
+   es mejor usar un framework como React o Svelte.
 
 8. Cómo se define una función en JS  
-function hello() {
-    // Contenido.
-}
+   function hello() {
+   // Contenido.
+   }
 
 9. Sobre el código demuestra la diferencia entre let y const  
-let es para declarar una variable cuyo valor puede cambiar, const como dice la
-palabra reservada es para constantes:
+   let es para declarar una variable cuyo valor puede cambiar, const como dice la
+   palabra reservada es para constantes:
 
 ```javascript
 let a = 12;
@@ -134,15 +135,14 @@ const B = 41; // Para cambiar el valor hay que volver a declarar la constante.
 
 // En caso de los objetos, no se pueden reasignar pero si modificar
 // sus atributos.
-const C = {valor: 10};
-C.valor = 15
+const C = { valor: 10 };
+C.valor = 15;
 
-C = {valor: 81} // esto NO se puede hacer.
-
+C = { valor: 81 }; // esto NO se puede hacer.
 ```
 
-10. Indica en el código:  
-   1. Si puede evitarse el uso de let. Qué hace
+10. Indica en el código:
+1. Si puede evitarse el uso de let. Qué hace
    En este caso solo se usa const porque nombre no se reasigna en ningún momento,
    por lo que let no es necesario:
 
@@ -151,10 +151,10 @@ const nombre = document.getElementById("nombreInput").value;
 // De variar, deberia usarse let.
 ```
 
-   2. Cuántos eventos hay en el código, cuáles son y para qué sirven  
+2.  Cuántos eventos hay en el código, cuáles son y para qué sirven  
     Hay dos eventos:
-```javascript
 
+```javascript
 // DOMContentLoaded: Primer evento, espera a que el html se cargue
 // antes de ejecutar el código.
 
@@ -174,5 +174,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 ```
-
-

@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Evita que se recargue la página   .addEventListener("submit", function (event) {
     .addEventListener("submit", function (event) {
       event.preventDefault(); // Evita que se recargue la página
+
+      //Constante, no se puede volver modificar pero si re-declarar.
       const nombre = document.getElementById("nombreInput").value;
       document.getElementById("salida").textContent = "¡Hola, " + nombre + "!";
     });
